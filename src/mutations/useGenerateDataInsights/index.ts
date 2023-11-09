@@ -1,0 +1,1 @@
+export { useGenerateDataInsights } from "./useGenerateDataInsights";
