@@ -2,8 +2,6 @@ import { Box, Button, Flex, IconButton, Input, Text } from "@chakra-ui/react";
 import { Field, FieldProps, Formik } from "formik";
 import React, { useMemo, useRef } from "react";
 import { CloudUpload, FiletypeCsv, PatchCheck } from "react-bootstrap-icons";
-import { useGenerateDataInsights } from "../../mutations";
-import { DataInsights } from "../../types";
 
 enum Dataset {
   Prostate = "prostate",
@@ -33,12 +31,10 @@ type EntryFormType = {
 };
 
 export default function DataEntryForm({
-  onSuccess,
+  onSubmit,
 }: {
-  onSuccess: React.Dispatch<React.SetStateAction<DataInsights | undefined>>;
+  onSubmit: (formData: FormData) => void;
 }) {
-  const { mutateAsync: generateDataInsights } = useGenerateDataInsights();
-
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const initialValues: EntryFormType = useMemo(
@@ -68,14 +64,15 @@ export default function DataEntryForm({
         formData.append("target", values.target);
         formData.append("showTicks", JSON.stringify(showTicks));
 
-        const data = await generateDataInsights(formData);
-        onSuccess(data);
+        onSubmit(formData);
       }}
     >
       {({ values, setFieldValue, submitForm }) => {
         return (
           <Flex
             p={4}
+            width={280}
+            height="100%"
             bg="#084c61"
             color="#bce7fd"
             direction={"column"}
@@ -87,7 +84,8 @@ export default function DataEntryForm({
             <Flex flex="1" alignItems={"center"}>
               <Flex direction={"column"} alignItems={"center"}>
                 <IconButton
-                  icon={<CloudUpload />}
+                  icon={values.dataset ? <PatchCheck /> : <CloudUpload />}
+                  colorScheme={values.dataset ? "whatsapp" : undefined}
                   aria-label="Upload Dataset"
                   mt={4}
                   onClick={() => {
@@ -139,6 +137,9 @@ export default function DataEntryForm({
                           <FiletypeCsv />
                         )
                       }
+                      colorScheme={
+                        values.exampleDataset === id ? "whatsapp" : undefined
+                      }
                       aria-label={name}
                       mt={4}
                       title={name}
@@ -148,10 +149,11 @@ export default function DataEntryForm({
                   ))}
                 </Flex>
                 <Button
-                  colorScheme={"whatsapp"}
                   onClick={submitForm}
                   mt={4}
-                  size="md"
+                  size="sm"
+                  colorScheme="messenger"
+                  isDisabled={!values.exampleDataset && !values.dataset}
                 >
                   Get Insights
                 </Button>

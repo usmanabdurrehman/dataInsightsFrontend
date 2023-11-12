@@ -24,26 +24,26 @@ export default function DataInsights({
       <TabList>
         <Tab>The Dataset</Tab>
         <Tab>Data Stats</Tab>
-        <Tab>Features Vs Targets</Tab>
+        <Tab>Features vs Targets</Tab>
         <Tab>Feature Importances</Tab>
         <Tab>Machine Learning</Tab>
       </TabList>
       <TabPanels flex="1" overflow="auto">
-        <TabPanel>
+        <TabPanel height="100%">
           <DataDisplay dataDisplay={dataInsights?.dataDisplay} />
         </TabPanel>
-        <TabPanel>
+        <TabPanel height="100%">
           <DataStats stats={dataInsights.stats} />
         </TabPanel>
-        <TabPanel>
-          <FeaturesVsTarget />
+        <TabPanel height="100%">
+          <FeaturesVsTarget plotData={dataInsights?.plotData} />
         </TabPanel>
-        <TabPanel>
+        <TabPanel height="100%">
           <FeatureImportances
             featureImportances={dataInsights?.featureImportances}
           />
         </TabPanel>
-        <TabPanel>
+        <TabPanel height="100%">
           <MachineLearning modelInfo={dataInsights?.model_info} />
         </TabPanel>
       </TabPanels>

@@ -8,11 +8,9 @@ import {
   Th,
   Td,
   TableContainer,
-  Box,
-  Heading,
-  Text,
 } from "@chakra-ui/react";
 import { FeatureImportances as FeatureImportancesType } from "../../types";
+import { InsightsWrapper } from "./InsightsWrapper";
 
 export default function FeatureImportances({
   featureImportances,
@@ -20,31 +18,31 @@ export default function FeatureImportances({
   featureImportances: FeatureImportancesType[];
 }) {
   return (
-    <Box>
-      <Heading fontSize="5xl">Feature Importances</Heading>
-      <Text mt={4}>
-        This table shows the features as ranked by the respective method
-      </Text>
-      <TableContainer mt={8}>
-        <Table variant="striped">
-          <Thead>
-            <Tr>
-              <Th>Feature Name</Th>
-              <Th isNumeric>Tree</Th>
-              <Th isNumeric>Statistical</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {featureImportances?.map(({ featureName, statistical, tree }) => (
+    <InsightsWrapper
+      title="Feature Importances"
+      subTitle="This table shows the features as ranked by the respective method"
+      content={
+        <TableContainer mt={8}>
+          <Table variant="striped">
+            <Thead>
               <Tr>
-                <Td>{featureName}</Td>
-                <Td isNumeric>{statistical}</Td>
-                <Td isNumeric>{tree}</Td>
+                <Th>Feature Name</Th>
+                <Th isNumeric>Tree</Th>
+                <Th isNumeric>Statistical</Th>
               </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </Box>
+            </Thead>
+            <Tbody>
+              {featureImportances?.map(({ featureName, statistical, tree }) => (
+                <Tr>
+                  <Td>{featureName}</Td>
+                  <Td isNumeric>{statistical}</Td>
+                  <Td isNumeric>{tree}</Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      }
+    />
   );
 }

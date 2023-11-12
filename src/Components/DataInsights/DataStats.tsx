@@ -1,6 +1,7 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { DataStats as DataStatsType } from "../../types";
+import { InsightsWrapper } from "./InsightsWrapper";
 
 const CountCard = ({ count, label }: { count: number; label: string }) => {
   return (
@@ -21,15 +22,15 @@ const CountCard = ({ count, label }: { count: number; label: string }) => {
 
 export default function DataStats({ stats }: { stats: DataStatsType }) {
   return (
-    <Box>
-      <Heading fontSize="5xl">
-        {stats?.problemType?.toUpperCase()} Problem
-      </Heading>
-      <Flex gap={8} mt={8}>
-        <CountCard count={stats?.numSamples} label="Samples" />
-        <CountCard count={stats?.numFeatures} label="Features" />
-        <CountCard count={stats?.numTarget} label="Targets" />
-      </Flex>
-    </Box>
+    <InsightsWrapper
+      title={`${stats?.problemType?.toUpperCase()} Problem`}
+      content={
+        <Flex gap={8} mt={8}>
+          <CountCard count={stats?.numSamples} label="Samples" />
+          <CountCard count={stats?.numFeatures} label="Features" />
+          <CountCard count={stats?.numTarget} label="Targets" />
+        </Flex>
+      }
+    />
   );
 }

@@ -8,10 +8,9 @@ import {
   Th,
   Td,
   TableContainer,
-  Box,
-  Heading,
 } from "@chakra-ui/react";
 import { DataDisplay as DataDisplayType } from "../../types";
+import { InsightsWrapper } from "./InsightsWrapper";
 
 export default function DataDisplay({
   dataDisplay,
@@ -19,28 +18,30 @@ export default function DataDisplay({
   dataDisplay: DataDisplayType;
 }) {
   return (
-    <Box>
-      <Heading fontSize="5xl">The Data</Heading>
-      <TableContainer mt={8}>
-        <Table variant="striped">
-          <Thead>
-            <Tr>
-              {dataDisplay?.columns?.map((column) => (
-                <Th>{column}</Th>
-              ))}
-            </Tr>
-          </Thead>
-          <Tbody>
-            {dataDisplay?.rows?.map((row) => (
+    <InsightsWrapper
+      title="The Data"
+      content={
+        <TableContainer mt={8}>
+          <Table variant="striped">
+            <Thead>
               <Tr>
-                {row?.map((rowValue) => (
-                  <Td>{rowValue}</Td>
+                {dataDisplay?.columns?.map((column) => (
+                  <Th>{column}</Th>
                 ))}
               </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </Box>
+            </Thead>
+            <Tbody>
+              {dataDisplay?.rows?.map((row) => (
+                <Tr>
+                  {row?.map((rowValue) => (
+                    <Td>{rowValue}</Td>
+                  ))}
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      }
+    />
   );
 }
