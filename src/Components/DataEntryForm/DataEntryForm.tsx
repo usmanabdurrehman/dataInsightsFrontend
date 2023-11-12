@@ -78,7 +78,7 @@ export default function DataEntryForm({
             direction={"column"}
             alignItems={"center"}
           >
-            <Text fontWeight={"bold"} fontSize="xl">
+            <Text fontWeight={"bold"} fontSize="2xl">
               Data Insights.io
             </Text>
             <Flex flex="1" alignItems={"center"}>
