@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Box, Button, Flex, Input } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Spinner } from "@chakra-ui/react";
 import { ModelInfo } from "../../types";
 import { InsightsWrapper } from "./InsightsWrapper";
 import { usePrediction } from "../../queries";
@@ -13,14 +13,13 @@ export default function MachineLearning({
   const [searchText, setSearchText] = useState("");
   const [predictionFeatures, setPredictionFeatures] = useState<string[]>();
 
-  const { data: prediction } = usePrediction(predictionFeatures);
+  const { data: prediction, isFetching } = usePrediction(predictionFeatures);
 
   return (
     <InsightsWrapper
       title="Machine Learning"
-      subTitle={`We tried different Machinne Learning Models for this problem and the
-    best one is: ${modelInfo?.best_model_name} with test accuracy of{" "}
-    ${modelInfo?.accuracy}`}
+      subTitle={`We tried different Machine Learning Models for this problem and the
+    best one is: ${modelInfo?.best_model_name} with test accuracy of ${modelInfo?.accuracy}`}
       content={
         <Flex mt={4}>
           <Box flex="1">
@@ -37,8 +36,9 @@ export default function MachineLearning({
               if (searchText?.includes("[") && searchText.includes("]"))
                 setPredictionFeatures(JSON.parse(searchText));
             }}
+            width="100px"
           >
-            Predict
+            {isFetching ? <Spinner size={"xs"} /> : "Predict"}
           </Button>
           <Flex
             alignItems={"center"}

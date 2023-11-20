@@ -29,7 +29,7 @@ export default function ErrorFallback({
           </Text>
         </Flex>
         <Flex mt={4} justifyContent="center">
-          <Button onClick={resetErrorBoundary}>Try Again</Button>
+          <Button onClick={resetErrorBoundary}>Try again</Button>
         </Flex>
       </Box>
     </Flex>

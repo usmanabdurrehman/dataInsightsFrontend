@@ -9,13 +9,15 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchInterval: 0,
-      refetchOnMount: false,
+      refetchOnMount: true,
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
       throwOnError: true,
+      retry: 1,
     },
     mutations: {
       throwOnError: true,
+      retry: 1,
     },
   },
 });
