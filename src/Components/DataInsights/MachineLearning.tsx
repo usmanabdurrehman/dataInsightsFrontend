@@ -17,6 +17,7 @@ export default function MachineLearning({
 
   return (
     <InsightsWrapper
+      data-cy="machine-learning"
       title="Machine Learning"
       subTitle={`We tried different Machine Learning Models for this problem and the
     best one is: ${modelInfo?.best_model_name} with test accuracy of ${modelInfo?.accuracy}`}

@@ -9,8 +9,8 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
-import { FeatureImportances as FeatureImportancesType } from "../../types";
-import { InsightsWrapper } from "./InsightsWrapper";
+import { FeatureImportances as FeatureImportancesType } from "../../../types";
+import { InsightsWrapper } from "../InsightsWrapper";
 
 export default function FeatureImportances({
   featureImportances,
@@ -19,6 +19,7 @@ export default function FeatureImportances({
 }) {
   return (
     <InsightsWrapper
+      data-cy="feature-importances"
       title="Feature Importances"
       subTitle="This table shows the features as ranked by the respective method"
       content={

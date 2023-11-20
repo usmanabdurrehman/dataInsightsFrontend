@@ -5,13 +5,15 @@ export default function InsightsWrapper({
   title,
   subTitle,
   content,
+  ...rest
 }: {
   title: string;
   subTitle?: string;
   content: JSX.Element;
+  "data-cy"?: string;
 }) {
   return (
-    <Flex height="100%" overflow={"auto"} direction="column" gap={2}>
+    <Flex height="100%" overflow={"auto"} direction="column" gap={2} {...rest}>
       <Box>
         <Heading fontSize="5xl">{title}</Heading>
         {subTitle && (

@@ -105,6 +105,7 @@ export default function FeaturesVsTarget({ plotData }: { plotData: PlotData }) {
 
   return (
     <InsightsWrapper
+      data-cy="features-vs-target"
       title="Features* vs Target"
       subTitle="* Compressed using a decomposition method like PCA"
       content={

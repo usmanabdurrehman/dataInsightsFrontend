@@ -1,9 +1,9 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import { DataInsights as DataInsightsType } from "../../types";
-import DataDisplay from "./DataDisplay";
-import DataStats from "./DataStats";
-import FeatureImportances from "./FeatureImportances";
+import { DataDisplay } from "./DataDisplay";
+import { DataStats } from "./DataStats";
+import { FeatureImportances } from "./FeatureImportances";
 import FeaturesVsTarget from "./FeaturesVsTarget";
 import MachineLearning from "./MachineLearning";
 

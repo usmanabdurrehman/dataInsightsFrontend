@@ -13,23 +13,23 @@ export interface DataStats {
 
 export interface ModelInfo {
   accuracy: number;
-  best_model_name: "string";
+  best_model_name: string;
 }
 
 export interface FeatureImportances {
-  featureName: "string";
+  featureName: string;
   statistical: number;
   tree: number;
 }
 
 export interface DataDisplay {
   title: string;
-  rows: number[][];
+  rows: (string | number)[][];
   columns: string[];
 }
 
 export interface PlotData {
-  color_points: string[];
+  colors_points: string[];
   problem_type: ProblemType;
   x: number[];
   y: number[];
