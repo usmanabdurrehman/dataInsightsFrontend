@@ -14,6 +14,7 @@ describe("DataDisplay", () => {
           }}
         />
       );
+      cy.contains("The Data").should("exist");
       cy.contains("Stock Prices Dataset").should("exist");
       cy.contains("Stock Number").should("exist");
       cy.contains("304").should("exist");

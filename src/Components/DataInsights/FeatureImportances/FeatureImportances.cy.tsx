@@ -16,6 +16,11 @@ describe("FeatureImportances", () => {
           ]}
         />
       );
+      cy.contains("Feature Importances").should("exist");
+      cy.contains(
+        "This table shows the features as ranked by the respective method"
+      ).should("exist");
+
       cy.contains("Revenue Growth").should("exist");
       cy.contains("19").should("exist");
       cy.contains("21").should("exist");

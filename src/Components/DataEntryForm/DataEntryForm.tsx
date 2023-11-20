@@ -1,28 +1,8 @@
 import { Box, Button, Flex, IconButton, Input, Text } from "@chakra-ui/react";
 import { Field, FieldProps, Formik } from "formik";
-import React, { useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef } from "react";
 import { CloudUpload, FiletypeCsv, PatchCheck } from "react-bootstrap-icons";
-
-enum Dataset {
-  Prostate = "prostate",
-  Heart = "heart",
-  StockPrices = "stockprices",
-}
-
-const EXAMPLE_DATASETS = [
-  {
-    id: Dataset.Heart,
-    name: "Heart Dataset",
-  },
-  {
-    id: Dataset.StockPrices,
-    name: "Stock Prices Dataset",
-  },
-  {
-    id: Dataset.Prostate,
-    name: "Prostate Dataset",
-  },
-];
+import { Dataset, EXAMPLE_DATASETS } from "./DataEntryForm.constants";
 
 type EntryFormType = {
   target: string;
@@ -46,27 +26,29 @@ export default function DataEntryForm({
     []
   );
 
+  const submitHandler = useCallback(
+    async (values: EntryFormType) => {
+      const formData = new FormData();
+      const showTicks = {
+        custom: !!values.dataset,
+        [Dataset.Prostate]: false,
+        [Dataset.Heart]: false,
+        [Dataset.StockPrices]: false,
+      };
+
+      if (values.exampleDataset) showTicks[values.exampleDataset] = true;
+
+      if (values.dataset) formData.append("file", values.dataset);
+      formData.append("target", values.target);
+      formData.append("showTicks", JSON.stringify(showTicks));
+
+      onSubmit(formData);
+    },
+    [onSubmit]
+  );
+
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={async (values) => {
-        const formData = new FormData();
-        const showTicks = {
-          custom: !!values.dataset,
-          [Dataset.Prostate]: false,
-          [Dataset.Heart]: false,
-          [Dataset.StockPrices]: false,
-        };
-
-        if (values.exampleDataset) showTicks[values.exampleDataset] = true;
-
-        if (values.dataset) formData.append("file", values.dataset);
-        formData.append("target", values.target);
-        formData.append("showTicks", JSON.stringify(showTicks));
-
-        onSubmit(formData);
-      }}
-    >
+    <Formik initialValues={initialValues} onSubmit={submitHandler}>
       {({ values, setFieldValue, submitForm }) => {
         return (
           <Flex

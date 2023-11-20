@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import { Box, Button, Flex, Input, Spinner } from "@chakra-ui/react";
-import { ModelInfo } from "../../types";
-import { InsightsWrapper } from "./InsightsWrapper";
-import { usePrediction } from "../../queries";
+import { ModelInfo } from "../../../types";
+import { InsightsWrapper } from "../InsightsWrapper";
+import { usePrediction } from "../../../queries";
 
 export default function MachineLearning({
   modelInfo,
@@ -29,6 +29,7 @@ export default function MachineLearning({
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               placeholder="e.g [3,200,3.5,6]"
+              data-cy="predict-input"
             />
           </Box>
           <Button

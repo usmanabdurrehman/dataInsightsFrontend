@@ -4,8 +4,8 @@ import { DataInsights as DataInsightsType } from "../../types";
 import { DataDisplay } from "./DataDisplay";
 import { DataStats } from "./DataStats";
 import { FeatureImportances } from "./FeatureImportances";
-import FeaturesVsTarget from "./FeaturesVsTarget";
-import MachineLearning from "./MachineLearning";
+import { FeaturesVsTarget } from "./FeaturesVsTarget";
+import { MachineLearning } from "./MachineLearning";
 
 export default function DataInsights({
   dataInsights,

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { PlotData, ProblemType } from "../../types";
+import { PlotData, ProblemType } from "../../../types";
 
 import {
   Chart as ChartJS,
@@ -12,7 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line, Scatter } from "react-chartjs-2";
-import { InsightsWrapper } from "./InsightsWrapper";
+import { InsightsWrapper } from "../InsightsWrapper";
 
 ChartJS.register(
   CategoryScale,
