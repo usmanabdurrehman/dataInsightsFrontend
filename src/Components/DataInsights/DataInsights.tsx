@@ -20,6 +20,7 @@ export default function DataInsights({
       flexDirection="column"
       height="100%"
       overflow="auto"
+      data-cy="data-insights"
     >
       <TabList>
         <Tab>The Dataset</Tab>

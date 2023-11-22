@@ -1,7 +1,4 @@
-export enum ProblemType {
-  Regression = "regression",
-  Classification = "classification",
-}
+import { ProblemType } from "../constants";
 
 export interface DataStats {
   featureStats: number[];

@@ -12,7 +12,7 @@ export function Generate() {
       bottom={0}
       alignItems={"center"}
       justifyContent="center"
-      bg="#42033d"
+      bg="brand.bgMain"
       zIndex={10000}
     >
       <img height="96px" width="96px" src={"./Loader.gif"} />
@@ -31,11 +31,11 @@ export function Initial() {
       bottom={0}
       alignItems={"center"}
       justifyContent="center"
-      bg="#42033d"
+      bg="brand.bgMain"
       zIndex={10000}
     >
       <Flex gap={3} alignItems="center">
-        <Heading fontSize="5xl" color="#bce7fd">
+        <Heading fontSize="5xl" color="brand.color">
           Data Insights.io
         </Heading>
         <img height="96px" width="96px" src={"./Loader.gif"} />

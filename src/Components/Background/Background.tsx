@@ -2,6 +2,7 @@ import React from "react";
 import Particles from "react-particles";
 import { Engine, IOptions, RecursivePartial } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
+import { BrandColor } from "../../constants";
 import "./Background.css";
 
 const options: RecursivePartial<IOptions> = {
@@ -54,7 +55,7 @@ const options: RecursivePartial<IOptions> = {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#bce7fd",
+      color: BrandColor.Color,
       opacity: 0.4,
       width: 1,
     },

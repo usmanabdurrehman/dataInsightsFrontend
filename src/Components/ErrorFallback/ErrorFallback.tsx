@@ -17,9 +17,9 @@ export default function ErrorFallback({
       bottom={0}
       alignItems={"center"}
       justifyContent="center"
-      bg="#42033d"
+      bg="brand.bgMain"
       zIndex={10000}
-      color="#bce7fd"
+      color="brand.color"
     >
       <Box fontSize="4xl">
         <Flex gap={3} alignItems="center">

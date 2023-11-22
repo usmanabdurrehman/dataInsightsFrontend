@@ -55,10 +55,11 @@ export default function DataEntryForm({
             p={4}
             width={280}
             height="100%"
-            bg="#084c61"
-            color="#bce7fd"
+            bg="brand.bg"
+            color="brand.color"
             direction={"column"}
             alignItems={"center"}
+            data-cy="data-entry-form"
           >
             <Text fontWeight={"bold"} fontSize="2xl">
               Data Insights.io
@@ -73,6 +74,7 @@ export default function DataEntryForm({
                   onClick={() => {
                     if (fileInputRef.current) fileInputRef.current.click();
                   }}
+                  data-cy="file-input-btn"
                   rounded="full"
                 />
                 <input
@@ -84,6 +86,7 @@ export default function DataEntryForm({
                       setFieldValue("dataset", e.target.files?.[0]);
                     }
                   }}
+                  data-cy="file-input"
                   accept=".csv"
                 />
                 <Text textAlign={"center"} fontSize="xs" mt={2}>
@@ -96,6 +99,7 @@ export default function DataEntryForm({
                       mt={4}
                       fontSize="sm"
                       _placeholder={{ color: "inherit", fontSize: "sm" }}
+                      data-cy="target-name"
                       {...field}
                     />
                   )}
@@ -127,6 +131,7 @@ export default function DataEntryForm({
                       title={name}
                       onClick={() => setFieldValue("exampleDataset", id)}
                       rounded="full"
+                      data-cy="custom-dataset"
                     />
                   ))}
                 </Flex>

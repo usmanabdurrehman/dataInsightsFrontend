@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Application } from "./Components/Application";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrandColor } from "./constants";
 
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND_BASE_URL;
 
@@ -22,10 +23,20 @@ const queryClient = new QueryClient({
   },
 });
 
+const theme = extendTheme({
+  colors: {
+    brand: {
+      bg: BrandColor.Background,
+      color: BrandColor.Color,
+      bgMain: BrandColor.BackgroundMain,
+    },
+  },
+});
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Application />
       </ChakraProvider>
     </QueryClientProvider>

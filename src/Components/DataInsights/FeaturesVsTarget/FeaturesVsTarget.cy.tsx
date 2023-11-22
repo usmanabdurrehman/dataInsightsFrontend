@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "@cypress/react";
 import FeaturesVsTarget from "./FeaturesVsTarget";
-import { ProblemType } from "../../../types";
+import { ProblemType } from "../../../constants";
 
 describe("FeaturesVsTarget", () => {
   context("when is rendered", () => {

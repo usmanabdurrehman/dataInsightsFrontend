@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "@cypress/react";
 import DataStats from "./DataStats";
-import { ProblemType } from "../../../types";
+import { ProblemType } from "../../../constants";
 
 describe("DataStats", () => {
   context("when is rendered", () => {

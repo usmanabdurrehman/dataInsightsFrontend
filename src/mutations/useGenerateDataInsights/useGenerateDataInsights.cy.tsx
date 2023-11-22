@@ -27,7 +27,7 @@ describe("useUploadImage", () => {
           url: "/getData*",
         },
         { id: 1 }
-      ).as("getGenerateInsights");
+      ).as("generateInsights");
 
       mount(
         <QueryClientProvider client={queryClient}>
@@ -35,7 +35,7 @@ describe("useUploadImage", () => {
         </QueryClientProvider>
       );
 
-      cy.wait("@getGenerateInsights");
+      cy.wait("@generateInsights");
       cy.wrap(mutationData)
         .should("have.property", "data")
         .should("deep.equal", { id: 1 });
