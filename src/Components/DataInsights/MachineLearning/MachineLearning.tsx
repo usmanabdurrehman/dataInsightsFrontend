@@ -13,8 +13,12 @@ export default function MachineLearning({
   const [searchText, setSearchText] = useState("");
   const [predictionFeatures, setPredictionFeatures] = useState<string[]>();
 
-  const { data: prediction, isFetching } = usePrediction(predictionFeatures);
-
+  const {
+    data: prediction,
+    isFetching,
+    ...rest
+  } = usePrediction(predictionFeatures);
+  console.log({ rest });
   return (
     <InsightsWrapper
       data-cy="machine-learning"

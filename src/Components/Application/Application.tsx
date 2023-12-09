@@ -8,7 +8,7 @@ import * as Loader from "../Loader";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Background } from "../Background";
-import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { QueryErrorResetBoundary, useQueryClient } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../ErrorFallback";
 
@@ -35,6 +35,8 @@ function Application() {
     }, 1000);
   }, []);
 
+  const queryClient = useQueryClient();
+
   if (isInitialLoaded) return <Loader.Initial />;
   if (isPending) return <Loader.Generate />;
 
@@ -43,6 +45,7 @@ function Application() {
       {({ reset }) => (
         <ErrorBoundary
           onReset={() => {
+            queryClient.clear();
             reset();
             setDataInsights(undefined);
             setIsFetchingInitialData(false);
@@ -51,6 +54,7 @@ function Application() {
         >
           <Flex height="100vh" alignItems={"center"} justifyContent="center">
             <Background />
+
             <Flex
               height="600px"
               width={isFetchingInitialData ? "1280px" : "auto"}
