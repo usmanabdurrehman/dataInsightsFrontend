@@ -1,12 +1,10 @@
 import { IconButton } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { Moon, Sun } from "react-bootstrap-icons";
+import { useDarkMode } from "../../store";
 
 export default function LightDarkMode() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // TODO: Functionality need to be implemented using global state managements
-  return null;
+  const { isDarkMode, setIsDarkMode } = useDarkMode((store) => store);
 
   return (
     <div>
