@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DarkBrandColor, LightBrandColor } from "./constants";
 import { Audio } from "./Components";
 import React, { useMemo } from "react";
-import { LightDarkMode } from "./Components/LightDarkMode";
 import { useDarkMode } from "./store";
 
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND_BASE_URL;
@@ -60,7 +59,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <ActionButtons>
-          <LightDarkMode />
+          {/*TODO: Implement DarkMode Action */}
+          {/* <LightDarkMode /> */}
           <Audio />
         </ActionButtons>
         <Application />
