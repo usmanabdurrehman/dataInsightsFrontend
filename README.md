@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# DataInsights.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+:boom: An Advanced Data Insights Generator :boom:
 
-Currently, two official plugins are available:
+## Deployment link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://paint-it2.netlify.app/
 
-## Expanding the ESLint configuration
+## Few cool features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Ability to **Generate Data Insights** for any **CSV dataset** :file_cabinet:
+- Ability to Display Uploaded Data in a **Table** :sparkles:
+- Ability to Display **Stats** related to dataset :chart_with_upwards_trend:
+- Ability to Display Feature Importances related to dataset :white_check_mark:
+- Ability to Display **Features Plot**(**Scatter** for Classification and **Line** for Regression) related to dataset :chart_with_upwards_trend:
+- Ability to **Get Prediction** from a **Best Fit Machine Learning Model** for any particular sample :tada:
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- React <img alt="react" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
+- Chakra UI <img alt="chakra ui" src="https://img.shields.io/badge/-Chakra%20UI-319795?style=flat-square&logo=chakraui&logoColor=white" />
+- Framer Motion <img alt="framer motion" src="https://img.shields.io/badge/-Framer-0055FF?style=flat-square&logo=framer&logoColor=white" />
+- Flask <img alt="flask" src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white" />
+- Scikit learn <img alt="flask" src="https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
+- Pandas <img alt="pandas" src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+- Numpy <img alt="flask" src="https://img.shields.io/badge/-Numpy-013243?style=flat-square&logo=numpy&logoColor=white" />
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to run
+
+- git clone https://github.com/usmanabdurrehman/dataInsightsFrontend
+- cd dataInsightsFrontend
+- yarn
+- yarn dev
