@@ -9,8 +9,8 @@ describe("FeaturesVsTarget", () => {
       mount(
         <FeaturesVsTarget
           plotData={{
-            colors_points: [],
-            problem_type: ProblemType.Regression,
+            colorsPoints: [],
+            problemType: ProblemType.Regression,
             x: [1],
             xy: [{ x: 1, y: 1 }],
             y: [1],

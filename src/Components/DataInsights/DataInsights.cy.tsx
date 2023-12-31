@@ -23,13 +23,13 @@ describe("DataInsights", () => {
                   tree: 1,
                 },
               ],
-              model_info: {
+              modelInfo: {
                 accuracy: 99.38,
-                best_model_name: "GradientBoostingRegressor",
+                bestModelName: "GradientBoostingRegressor",
               },
               plotData: {
-                colors_points: [],
-                problem_type: ProblemType.Regression,
+                colorsPoints: [],
+                problemType: ProblemType.Regression,
                 x: [1],
                 xy: [{ x: 1, y: 1 }],
                 y: [1],

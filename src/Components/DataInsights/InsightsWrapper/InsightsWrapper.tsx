@@ -8,7 +8,7 @@ export default function InsightsWrapper({
   ...rest
 }: {
   title: string;
-  subTitle?: string;
+  subTitle?: React.ReactNode;
   content: JSX.Element;
   "data-cy"?: string;
 }) {

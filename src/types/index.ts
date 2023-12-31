@@ -10,7 +10,7 @@ export interface DataStats {
 
 export interface ModelInfo {
   accuracy: number;
-  best_model_name: string;
+  bestModelName: string;
 }
 
 export interface FeatureImportances {
@@ -26,8 +26,8 @@ export interface DataDisplay {
 }
 
 export interface PlotData {
-  colors_points: string[];
-  problem_type: ProblemType;
+  colorsPoints: string[];
+  problemType: ProblemType;
   x: number[];
   y: number[];
   xy: { x: number; y: number }[];
@@ -35,7 +35,7 @@ export interface PlotData {
 
 export interface DataInsights {
   stats: DataStats;
-  model_info: ModelInfo;
+  modelInfo: ModelInfo;
   featureImportances: FeatureImportances[];
   dataDisplay: DataDisplay;
   plotData: PlotData;

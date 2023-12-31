@@ -11,7 +11,7 @@ describe("MachineLearning", () => {
           <MachineLearning
             modelInfo={{
               accuracy: 99.38,
-              best_model_name: "GradientBoostingRegressor",
+              bestModelName: "GradientBoostingRegressor",
             }}
           />
         </QueryClientProvider>
@@ -35,7 +35,7 @@ describe("MachineLearning", () => {
           <MachineLearning
             modelInfo={{
               accuracy: 99.38,
-              best_model_name: "GradientBoostingRegressor",
+              bestModelName: "GradientBoostingRegressor",
             }}
           />
         </QueryClientProvider>

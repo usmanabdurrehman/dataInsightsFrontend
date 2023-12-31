@@ -11,6 +11,7 @@ import { Background } from "../Background";
 import { QueryErrorResetBoundary, useQueryClient } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../ErrorFallback";
+import axios from "axios";
 
 function Application() {
   const [dataInsights, setDataInsights] = useState<DataInsightsType>();
@@ -33,6 +34,10 @@ function Application() {
     setTimeout(() => {
       setIsInitialLoaded(false);
     }, 1000);
+  }, []);
+
+  useEffect(() => {
+    axios.get("/");
   }, []);
 
   const queryClient = useQueryClient();

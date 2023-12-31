@@ -45,7 +45,7 @@ export default function DataInsights({
           />
         </TabPanel>
         <TabPanel height="100%">
-          <MachineLearning modelInfo={dataInsights?.model_info} />
+          <MachineLearning modelInfo={dataInsights?.modelInfo} />
         </TabPanel>
       </TabPanels>
     </Tabs>

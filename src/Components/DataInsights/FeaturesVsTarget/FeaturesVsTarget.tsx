@@ -110,7 +110,7 @@ export default function FeaturesVsTarget({ plotData }: { plotData: PlotData }) {
       title="Features* vs Target"
       subTitle="* Compressed using a decomposition method like PCA"
       content={
-        plotData?.problem_type === ProblemType.Regression ? (
+        plotData?.problemType === ProblemType.Regression ? (
           <Line data={lineData} options={lineOptions} />
         ) : (
           <Scatter data={scatterData} options={scatterOptions} />
