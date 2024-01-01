@@ -4,7 +4,7 @@
 
 ## Deployment link
 
-https://paint-it2.netlify.app/
+https://data-insightsio.netlify.app/
 
 ## Few cool features
 
