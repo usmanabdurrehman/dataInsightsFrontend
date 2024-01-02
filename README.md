@@ -17,13 +17,13 @@ https://data-insightsio.netlify.app/
 
 ## Technologies
 
-- React <img alt="react" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" style="margin-bottom:-6px"/>
-- Chakra UI <img alt="chakra ui" src="https://img.shields.io/badge/-Chakra%20UI-319795?style=flat-square&logo=chakraui&logoColor=white" style="margin-bottom:-6px"/>
-- Framer Motion <img alt="framer motion" src="https://img.shields.io/badge/-Framer-0055FF?style=flat-square&logo=framer&logoColor=white" style="margin-bottom:-6px"/>
-- Flask <img alt="flask" src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white" style="margin-bottom:-6px" />
-- Scikit learn <img alt="flask" src="https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" style="margin-bottom:-6px"/>
-- Pandas <img alt="pandas" src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" style="margin-bottom:-6px"/>
-- Numpy <img alt="flask" src="https://img.shields.io/badge/-Numpy-013243?style=flat-square&logo=numpy&logoColor=white" style="margin-bottom:-6px"/>
+- React <img alt="react" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
+- Chakra UI <img alt="chakra ui" src="https://img.shields.io/badge/-Chakra%20UI-319795?style=flat-square&logo=chakraui&logoColor=white" />
+- Framer Motion <img alt="framer motion" src="https://img.shields.io/badge/-Framer-0055FF?style=flat-square&logo=framer&logoColor=white" />
+- Flask <img alt="flask" src="https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white"  />
+- Scikit learn <img alt="flask" src="https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
+- Pandas <img alt="pandas" src="https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+- Numpy <img alt="flask" src="https://img.shields.io/badge/-Numpy-013243?style=flat-square&logo=numpy&logoColor=white" />
 
 ## How to run
 
